@@ -198,7 +198,7 @@ const projLeft = document.getElementById('projLeft');
 const projRight = document.getElementById('projRight');
 
 if (projGrid && projLeft && projRight) {
-  const scrollAmount = 500;
+  const scrollAmount = projGrid.querySelector('.project-card')?.offsetWidth + 32 || 500;
 
   function updateArrows() {
     projLeft.classList.toggle('hidden', projGrid.scrollLeft <= 0);
@@ -219,4 +219,20 @@ if (projGrid && projLeft && projRight) {
 
   // Set initial arrow state
   updateArrows();
+}
+
+// Mobile menu
+const hamburger = document.querySelector('.nav__hamburger');
+const mobileMenu = document.querySelector('.nav__links');
+
+if (hamburger && mobileMenu) {
+  hamburger.addEventListener('click', () => {
+    mobileMenu.classList.toggle('nav__links--open');
+  });
+
+  mobileMenu.querySelectorAll('.nav__link').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.remove('nav__links--open');
+    });
+  });
 }
