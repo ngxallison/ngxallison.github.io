@@ -1,0 +1,17 @@
+title: Allison Ng
+description: Software Engineer & CS Grad Student
+url: "https://yourusername.github.io"
+baseurl: ""
+
+theme: null
+plugins:
+  - jekyll-seo-tag
+
+markdown: kramdown
+highlighter: rouge
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - _site
